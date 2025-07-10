@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+            crossorigin="anonymous"></script>
+        <link href="../styles.css" rel="stylesheet">
+        <title>Krist Novoselic - Nirvana</title>
+    </head>
+
+    <button id="home-btn" type="button" class="btn btn-light btn-outline-dark m-2">Home</button>
+
+    <body class="bg-default ">
+        <div class="container img-pages col-12 col-md-6 ">
+            <img src="../images/krist.jpg" alt="Kurt Cobain">
+        </div>
+        <br>
+        <div class="container">
+            <h2>Krist Novoselic</h2>
+            <p>
+                <b>Krist Anthony Novoselic</b> (born May 16, 1965) is an American
+                musician, politician and activist. Novoselic co-founded and played bass on every album for the rock band
+                Nirvana.
+            </p>
+            <p>
+                After Nirvana disbanded in 1994 (following the death of <a href="kurt.html">Kurt Cobain</a>),
+                Novoselic formed Sweet 75 in 1995 and Eyes Adrift in 2002, releasing one album
+                with each band.[2][3] From 2006 to 2009, he played in the punk rock band Flipper. In 2011, he
+                contributed bass and accordion to the song "I Should Have Known" on the Foo Fighters' studio album
+                Wasting Light. From 2017 to 2020, he played bass and accordion for the band Giants in the Trees.
+            </p>
+        </div>
+    </body>
+
+    <script>
+
+        document.getElementById('home-btn').addEventListener('click', function() {
+            window.location.href = "../index.html";
+        });
+
+        const toggleBtn = document.getElementById('kurt-mode-toggle');
+        const body = document.body;
+
+        if (localStorage.getItem('kurtMode') == 'on') {
+            body.classList.add('kurt-mode');
+        }
+
+        toggleBtn.addEvenListener('click', function() {
+            body.classList.toggle('kurt-mode');
+
+            if (body.classList.contains('kurt-mode')) {
+                localStorage.setItem('kurtMode', 'on');
+            } else {
+                localStorage.setItem('kurtMode', 'off');
+            }
+        })
+
+    </script>
+
+</html>
